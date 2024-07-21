@@ -6,7 +6,7 @@ namespace Magic_Land_Explorer
 {
     public class Program
     {
-        public delegate void MenuAction(List<Category> categories);
+        //public delegate void MenuAction(List<Category> categories);
 
         static void Main(string[] args)
         {
