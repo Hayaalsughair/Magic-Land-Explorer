@@ -15,7 +15,7 @@ namespace Magic_Land_Explorer.Tasks
                                  .FirstOrDefault();
             if (longestDuration != null)
             {
-                Console.WriteLine($"Logest Destinations: {longestDuration.Name}\tDuration:{longestDuration.Duration}");
+                Console.WriteLine($"\nLogest Destinations: {longestDuration.Name}\tDuration:{longestDuration.Duration}\n");
             }
             else
             {

@@ -6,14 +6,19 @@ namespace Magic_Land_Explorer
 {
     public class Program
     {
-        //public delegate void MenuAction(List<Category> categories);
+        public delegate void MenuAction(List<Category> categories);
 
         static void Main(string[] args)
         {
             string json = File.ReadAllText("data.json");
             List<Category> categories = JsonConvert.DeserializeObject<List<Category>>(json);
 
-    
+            //delegate instances  
+            MenuAction showFilteredDestinations = FilterDestinations.DisplayDestination;
+            MenuAction showLongestDuration = LongestDuration.DisplayLongestDuration;
+            MenuAction sortByName = SortByName.DisplaySortedName;
+            MenuAction showTop3Durations = Top3Duration.DisplayTop3Duration;
+
             bool startExplore = true;
             while (startExplore)
             {
@@ -28,16 +33,16 @@ namespace Magic_Land_Explorer
                 switch (choice)
                 {
                     case "1":
-                        FilterDestinations.DisplayDestination(categories);
+                        showFilteredDestinations(categories);
                         break;
                     case "2":
-                        LongestDuration.DisplayLongestDuration(categories);
+                        showLongestDuration(categories);
                         break;
                     case "3":
-                        SortByName.DisplaySortedName(categories);
+                        sortByName(categories);
                         break;
                     case "4":
-                        Top3Duration.DisplayTop3Duration(categories);
+                        showTop3Durations(categories);
                         break;
                     case "0":
                         startExplore = false;
